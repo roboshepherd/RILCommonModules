@@ -5,7 +5,7 @@ POSE_FACTOR = 5
 PROB_SCALE = 100
 TASK_SELECTION_STEPS = 20
 RANDOM_WALK_TASK_ID = 0
-TASK_PERIOD = 30 # timeout period
+TASK_PERIOD = 5 # timeout period
 
 # DBus  Message Protocol
 ROBOT_POSE_X = 'x'
