@@ -78,6 +78,7 @@ ANGLE90  = pi/2
 ANGLE180 = pi
 ANGLE270  = 3.0 * pi/2
 ANGLE360  =  2.0 * pi
+ANGLE0 = 0.0
 
 # Robot Device States
 #/* Connectivity states */
