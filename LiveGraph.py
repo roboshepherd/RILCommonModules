@@ -10,14 +10,15 @@ class DataCtx:
         self.sep = sep
 
 class DataWriter:
-    def __init__(self, obj_type, obj_id,  data_ctx, time_stamp, ext=\
+    def __init__(self, obj_type, data_ctx, time_stamp, obj_id="", ext=\
         FILE_EXT):
         # init data file
-        self.fn = obj_type + str(obj_id) +  data_ctx.name + str(time_stamp) + ext
+        self.fn = obj_type + obj_id + "-"+  data_ctx.name + "-" +\
+         str(time_stamp) + ext
         f = open(self.fn, 'w')
-        header = "##" + data_ctx.sep + "##"
+        header = "##" + data_ctx.sep + "##\n"
         header += "@" + data_ctx.name + ": " + data_ctx.desc + "\n" 
-        header += "#" + data_ctx.label
+        header +=  data_ctx.label
         f.write(header)
         f.close()
     

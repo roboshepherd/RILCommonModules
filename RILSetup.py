@@ -3,9 +3,11 @@ from math import pi
 USE_NORMALIZED_POSE = True
 POSE_FACTOR = 5
 PROB_SCALE = 100
-TASK_SELECTION_STEPS = 20
+TASK_SELECTION_STEPS = 100
 RANDOM_WALK_TASK_ID = 0
-TASK_PERIOD = 5 # timeout period
+TASK_PERIOD = 30 # timeout period
+TASK_INFO_UPDATE_FREQ = TASK_PERIOD / 3
+TASK_INFO_EMIT_FREQ = TASK_PERIOD / 10
 
 # DBus  Message Protocol
 ROBOT_POSE_X = 'x'
@@ -23,7 +25,7 @@ TASK_INFO_URGENCY = 4
 DBUS_IFACE_TRACKER = "uk.ac.newport.ril.SwisTrack"
 DBUS_IFACE_EPUCK = "uk.ac.newport.ril.Epuck"
 DBUS_PATH_BASE = "/robot"
-DBUS_IFACE_TASK_SERVER = "uk.ac.newport.ril.TaskBroadcaster"
+DBUS_IFACE_TASK_SERVER = "uk.ac.newport.ril.TaskServer"
 DBUS_PATH_TASK_SERVER = "/taskserver"
 SIG_TASK_STATUS = "TaskStatus"
 SIG_ROBOT_POSE = "PoseSignal"
@@ -44,19 +46,19 @@ TASK_TIMED_OUT = "TaskTimedOut"
 
 
 #RIL and AFM params
-MAX_SHOPTASK = 3
-INIT_URGENCY = 0.5
-DELTA_URGENCY = 0.01
-DELTA_URGENCY_INC = 0.01
-DELTA_URGENCY_DEC = 0.1
-INIT_MATERIAL_COUNT = 10
+MAX_SHOPTASK = 3   
+INIT_TASK_URGENCY = 0.4
+DELTA_TASK_URGENCY = 0.01 
+DELTA_TASK_URGENCY_INC = 0.005
+DELTA_TASK_URGENCY_DEC = 0.00025
+#INIT_MATERIAL_COUNT = 10
 XY = 2  # for task coordinates
-DELTA_DISTANCE = 0.001
+DELTA_DISTANCE = 0.000001
  
 #robot device's instrinsics
 INIT_SENSITIZATION = 0.1
-INIT_LEARN_RATE = 0.01
-INIT_FORGET_RATE = 0.0016
+INIT_LEARN_RATE = 0.02 
+INIT_FORGET_RATE = 0.01 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
  
 # for pose nomalization
 MAX_X = 3600
@@ -64,7 +66,7 @@ MAX_Y = 3248
 MAX_THETA = (2* pi)
  
 # for navigation
-TASK_RADIUS = 100 #pixel
+TASK_RADIUS = 300 #pixel
 TASK_CONE_ANGLE = 0.26 #15deg
 MAX_NAV_STEP = 1 #how long navigation continues
 # angles

@@ -1,10 +1,10 @@
 import math
 import time
 import logging
-import logging.config
-import logging.handlers
+#import logging.config
+#import logging.handlers
 
-logging.config.fileConfig("logging.conf")
+#logging.config.fileConfig("logging.conf")
 logger = logging.getLogger("EpcLogger")
 
 class  Pose:
