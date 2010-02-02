@@ -25,17 +25,33 @@ TASK_INFO_URGENCY = 4
 DBUS_IFACE_TRACKER = "uk.ac.newport.ril.SwisTrack"
 DBUS_IFACE_EPUCK = "uk.ac.newport.ril.Epuck"
 DBUS_PATH_BASE = "/robot"
+DBUS_ROBOT_PATH_BASE = "/robot"
 DBUS_IFACE_TASK_SERVER = "uk.ac.newport.ril.TaskServer"
 DBUS_PATH_TASK_SERVER = "/taskserver"
 SIG_TASK_STATUS = "TaskStatus"
 SIG_ROBOT_POSE = "PoseSignal"
 SIG_TASK_INFO = "TaskInfo"
+SIG_LOCAL_TASK_INFO = "LocalTaskInfo"
+SIG_TASK_NEIGHBOR = "TaskNeighbors"
+SIG_ROBOT_PEERS = "RobotPeers"
+DBUS_TASK_PATH_BASE = "/task"
+ROBOTS_PATH_CFG_FILE = "/home/newport-ril/centralized-expt/\
+DistributedTaskServer/robots_dbus_path.conf"
+
+DBUS_PATH_EPUCK_LOCALITY = "/EpuckLocality"
+TASK_INFO_TYPE = "TaskInfoType"
+LOCAL_INFO_PRIMARY = 1  # robot got this taskinfo from task server
+LOCAL_INFO_SECONDARY = 2 # learned about this task via other peers
+
+
 
 # DataManager SelectedTask  Dict keys
 SELECTED_TASK_ID = 'id' # val: TaskID
 SELECTED_TASK_STATUS = 'status' # val: TaskStatus
 SELECTED_TASK_INFO  = 'taskinfo' # val: [x, y, theta]
 SELECTED_TASK_RW = 'rw' # Randomwalk
+ROBOT_PEERS = 'peers'
+TIME_STAMP = 'ts'
 
 
 # Task Status
