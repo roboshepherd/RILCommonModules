@@ -35,13 +35,12 @@ SIG_LOCAL_TASK_INFO = "LocalTaskInfo"
 SIG_TASK_NEIGHBOR = "TaskNeighbors"
 SIG_ROBOT_PEERS = "RobotPeers"
 DBUS_TASK_PATH_BASE = "/task"
-ROBOTS_PATH_CFG_FILE = "/home/newport-ril/centralized-expt/\
-DistributedTaskServer/robots_dbus_path.conf"
-
-DBUS_PATH_EPUCK_LOCALITY = "/EpuckLocality"
-TASK_INFO_TYPE = "TaskInfoType"
-LOCAL_INFO_PRIMARY = 1  # robot got this taskinfo from task server
-LOCAL_INFO_SECONDARY = 2 # learned about this task via other peers
+ROBOTS_PATH_CFG_FILE =\
+"/home/newport-ril/centralized-expt/DistributedTaskServer/robots_dbus_path.conf"
+DBUS_PATH_EPUCK_LOCALITY = "/EpuckLocal"
+#TASK_INFO_TYPE = "TaskInfoType"
+#LOCAL_INFO_PRIMARY = 1  # robot got this taskinfo from task server
+#LOCAL_INFO_SECONDARY = 2 # learned about this task via other peers
 
 
 
