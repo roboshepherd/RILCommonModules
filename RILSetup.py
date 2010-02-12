@@ -1,13 +1,41 @@
 from math import pi
+# Tuneable param:
+#RIL and AFM params
+MAX_SHOPTASK = 4   
+INIT_TASK_URGENCY = 0.5
+#DELTA_TASK_URGENCY = 0.01 
+DELTA_TASK_URGENCY_INC = 0.005
+DELTA_TASK_URGENCY_DEC = 0.0025
+#INIT_MATERIAL_COUNT = 10
+XY = 2  # for task coordinates
+DELTA_DISTANCE = 0.000001
+ 
+#robot device's instrinsics
+INIT_SENSITIZATION = 0.1
+INIT_LEARN_RATE = 0.02 
+INIT_FORGET_RATE = 0.0067 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
+ 
+# for pose nomalization
+MAX_X = 2400
+MAX_Y = 2144
+MAX_THETA = (2* pi)
+ 
+# for navigation
+TASK_RADIUS = 300 #pixel
+TASK_CONE_ANGLE = 0.26 #15deg
+MAX_NAV_STEP = 1 #how long navigation continues
+
+
+
 # Enabling/Disabling Some Expt Settings/Params of TaskSelector
 USE_NORMALIZED_POSE = True
 POSE_FACTOR = 5
 PROB_SCALE = 100
-TASK_SELECTION_STEPS = 100
+TASK_SELECTION_STEPS = 1000 # inf
 RANDOM_WALK_TASK_ID = 0
-TASK_PERIOD = 30 # timeout period
-TASK_INFO_UPDATE_FREQ = TASK_PERIOD / 3
-TASK_INFO_EMIT_FREQ = TASK_PERIOD / 10
+TASK_PERIOD = 10 # task timeout period
+TASK_INFO_UPDATE_FREQ = 5 # updater delay
+TASK_INFO_EMIT_FREQ = 2.5 # emitter delay
 
 # DBus  Message Protocol
 ROBOT_POSE_X = 'x'
@@ -60,35 +88,12 @@ TASK_DONE = "TaskDone"
 TASK_TIMED_OUT = "TaskTimedOut"
 
 
-#RIL and AFM params
-MAX_SHOPTASK = 3   
-INIT_TASK_URGENCY = 0.4
-DELTA_TASK_URGENCY = 0.01 
-DELTA_TASK_URGENCY_INC = 0.005
-DELTA_TASK_URGENCY_DEC = 0.0025
-#INIT_MATERIAL_COUNT = 10
-XY = 2  # for task coordinates
-DELTA_DISTANCE = 0.000001
- 
-#robot device's instrinsics
-INIT_SENSITIZATION = 0.1
-INIT_LEARN_RATE = 0.02 
-INIT_FORGET_RATE = 0.01 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
- 
-# for pose nomalization
-MAX_X = 3600
-MAX_Y = 3248
-MAX_THETA = (2* pi)
- 
-# for navigation
-TASK_RADIUS = 300 #pixel
-TASK_CONE_ANGLE = 0.26 #15deg
-MAX_NAV_STEP = 1 #how long navigation continues
-# angles
-REVERSE_ANGLE1 = 2.90 
-REVERSE_ANGLE2  = 1.52
-DELTA_ANGLE1  = 0.26
-DELTA_ANGLE0 =  0.26
+
+## angles
+#REVERSE_ANGLE1 = 2.90 
+#REVERSE_ANGLE2  = 1.52
+#DELTA_ANGLE1  = 0.26
+#DELTA_ANGLE0 =  0.26
  
 ANGLE30  = pi/6
 ANGLE90  = pi/2
@@ -97,7 +102,7 @@ ANGLE270  = 3.0 * pi/2
 ANGLE360  =  2.0 * pi
 ANGLE0 = 0.0
 
-# Robot Device States
+#--------- Robot Device States: obsolete now  --------------#
 #/* Connectivity states */
 NOTSET = -100
 #/* state as (- id) e.g. UNAVAILABLE = - id
@@ -107,15 +112,15 @@ UNAVAILABLE = -50
 #AVAILABLE state of Robot 5 = 5*/
 AVAILABLE = 0
 #/* task states, set state as (this value+id) e.g. RW = 50 + id*/
-RW = 50
-TASK = 99 #/* seldom used */
-TASK1 = 100
-TASK2 = 200
-TASK3 = 300
-TASK4 = 400
-TASK5 = 500
-TASK6 = 600
-TASK7 = 700
-TASK8 = 800
-TASK9 = 900
-TASK10 = 1000
+#RW = 50
+#TASK = 99 #/* seldom used */
+#TASK1 = 100
+#TASK2 = 200
+#TASK3 = 300
+#TASK4 = 400
+#TASK5 = 500
+#TASK6 = 600
+#TASK7 = 700
+#TASK8 = 800
+#TASK9 = 900
+#TASK10 = 1000
