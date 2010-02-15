@@ -3,17 +3,19 @@ from math import pi
 #RIL and AFM params
 MAX_SHOPTASK = 4   
 INIT_TASK_URGENCY = 0.5
-#DELTA_TASK_URGENCY = 0.01 
+MIN_TASK_URGENCY = 0.1
+MAX_TASK_URGENCY  = 1 
 DELTA_TASK_URGENCY_INC = 0.005
 DELTA_TASK_URGENCY_DEC = 0.0025
+RW_MAX_URGENCY = 0.1
 #INIT_MATERIAL_COUNT = 10
 XY = 2  # for task coordinates
 DELTA_DISTANCE = 0.000001
  
 #robot device's instrinsics
 INIT_SENSITIZATION = 0.1
-INIT_LEARN_RATE = 0.02 
-INIT_FORGET_RATE = 0.0067 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
+INIT_LEARN_RATE = 0.03 
+INIT_FORGET_RATE = 0.01 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
  
 # for pose nomalization
 MAX_X = 2400
@@ -87,14 +89,7 @@ TASK_PENDING = "TaskPending"
 TASK_DONE = "TaskDone"
 TASK_TIMED_OUT = "TaskTimedOut"
 
-
-
-## angles
-#REVERSE_ANGLE1 = 2.90 
-#REVERSE_ANGLE2  = 1.52
-#DELTA_ANGLE1  = 0.26
-#DELTA_ANGLE0 =  0.26
- 
+# Angle alias
 ANGLE30  = pi/6
 ANGLE90  = pi/2
 ANGLE180 = pi
@@ -102,7 +97,7 @@ ANGLE270  = 3.0 * pi/2
 ANGLE360  =  2.0 * pi
 ANGLE0 = 0.0
 
-#--------- Robot Device States: obsolete now  --------------#
+#--------- Robot Device States: obsolete now  ---#
 #/* Connectivity states */
 NOTSET = -100
 #/* state as (- id) e.g. UNAVAILABLE = - id
@@ -111,16 +106,4 @@ UNAVAILABLE = -50
 #/* state as (+ id) e.g. AVAILABLE = state + id
 #AVAILABLE state of Robot 5 = 5*/
 AVAILABLE = 0
-#/* task states, set state as (this value+id) e.g. RW = 50 + id*/
-#RW = 50
-#TASK = 99 #/* seldom used */
-#TASK1 = 100
-#TASK2 = 200
-#TASK3 = 300
-#TASK4 = 400
-#TASK5 = 500
-#TASK6 = 600
-#TASK7 = 700
-#TASK8 = 800
-#TASK9 = 900
-#TASK10 = 1000
+
