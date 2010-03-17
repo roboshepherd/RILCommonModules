@@ -1,4 +1,8 @@
 from math import pi
+# remote data mgr
+EXPT_SERVER_IP = '192.168.212.70'
+EXPT_SERVER_PORT_BASE = 5000
+
 # Tuneable param:
 #RIL and AFM params
 MAX_SHOPTASK = 4   
@@ -35,7 +39,7 @@ POSE_FACTOR = 5
 PROB_SCALE = 100
 TASK_SELECTION_STEPS = 1000 # inf
 RANDOM_WALK_TASK_ID = 0
-TASK_PERIOD = 10 # task timeout period
+TASK_PERIOD = 6*10 # task timeout period : orig 10
 TASK_INFO_UPDATE_FREQ = 5 # updater delay
 TASK_INFO_EMIT_FREQ = 2.5 # emitter delay
 
