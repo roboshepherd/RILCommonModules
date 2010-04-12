@@ -5,7 +5,7 @@ EXPT_SERVER_PORT_BASE = 5000
 
 # Tuneable param:
 #RIL and AFM params
-MAX_SHOPTASK = 4   
+MAX_SHOPTASK = 8   
 INIT_TASK_URGENCY = 0.5
 MIN_TASK_URGENCY = 0
 MAX_TASK_URGENCY  = 1 
@@ -22,8 +22,8 @@ INIT_LEARN_RATE = 0.03
 INIT_FORGET_RATE = 0.01 # should be INIT_LEARN_RATE/ (MAX_SHOPTASK -1)
  
 # for pose nomalization
-MAX_X = 2400
-MAX_Y = 2144
+MAX_X = 4872
+MAX_Y = 3248
 MAX_THETA = (2* pi)
  
 # for navigation
@@ -39,7 +39,7 @@ POSE_FACTOR = 5
 PROB_SCALE = 100
 TASK_SELECTION_STEPS = 1000 # inf
 RANDOM_WALK_TASK_ID = 0
-TASK_PERIOD = 6*10 # task timeout period : orig 10
+TASK_PERIOD = 10 # task timeout period : orig 10
 TASK_INFO_UPDATE_FREQ = 5 # updater delay
 TASK_INFO_EMIT_FREQ = 2.5 # emitter delay
 
