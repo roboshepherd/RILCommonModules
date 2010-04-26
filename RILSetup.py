@@ -42,6 +42,7 @@ RANDOM_WALK_TASK_ID = 0
 TASK_PERIOD = 10 # task timeout period : orig 10
 TASK_INFO_UPDATE_FREQ = 5 # updater delay
 TASK_INFO_EMIT_FREQ = 2.5 # emitter delay
+TRACKER_MONITOR_FREQ = 5 # PoseUpdateDelay, checking SwisTrack's liveness
 
 # DBus  Message Protocol
 ROBOT_POSE_X = 'x'
