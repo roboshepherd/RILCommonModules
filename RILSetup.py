@@ -72,11 +72,6 @@ DBUS_TASK_PATH_BASE = "/task"
 ROBOTS_PATH_CFG_FILE =\
 "/home/newport-ril/centralized-expt/DistributedTaskServer/robots_dbus_path.conf"
 DBUS_PATH_EPUCK_LOCALITY = "/EpuckLocal"
-#TASK_INFO_TYPE = "TaskInfoType"
-#LOCAL_INFO_PRIMARY = 1  # robot got this taskinfo from task server
-#LOCAL_INFO_SECONDARY = 2 # learned about this task via other peers
-
-
 
 # DataManager SelectedTask  Dict keys
 SELECTED_TASK_ID = 'id' # val: TaskID
@@ -92,6 +87,12 @@ TASK_SELECTED = "TaskSelected"
 TASK_PENDING = "TaskPending"
 TASK_DONE = "TaskDone"
 TASK_TIMED_OUT = "TaskTimedOut"
+
+# Play/pause task server
+TASK_INFO_UPDTAER_STATE = "UpdaterState"
+SIG_TASK_INFO_UPDTAER = "TaskInfoUpdaterState"
+TASK_INFO_UPDATER_RUN = "run"
+TASK_INFO_UPDATER_PAUSE = "pause"
 
 # Angle alias
 ANGLE30  = pi/6
