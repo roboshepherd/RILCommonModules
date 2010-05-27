@@ -5,7 +5,7 @@ EXPT_SERVER_PORT_BASE = 5000
 
 # Tuneable param:
 #RIL and AFM params
-MAX_SHOPTASK = 8   
+MAX_SHOPTASK = 4   
 INIT_TASK_URGENCY = 0.5
 MIN_TASK_URGENCY = 0
 MAX_TASK_URGENCY  = 1 
@@ -75,7 +75,7 @@ ROBOTS_PATH_CFG_FILE =\
 DBUS_PATH_EPUCK_LOCALITY = "/EpuckLocal"
 
 # DataManager SelectedTask  Dict keys
-SELECTED_TASK_ID = 'id' # val: TaskID
+SELECTED_TASK_ID = 'taskid' # val: TaskID
 SELECTED_TASK_STATUS = 'status' # val: TaskStatus
 SELECTED_TASK_INFO  = 'taskinfo' # val: [x, y, theta]
 SELECTED_TASK_RW = 'rw' # Randomwalk
