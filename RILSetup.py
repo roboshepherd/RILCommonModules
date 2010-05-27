@@ -95,6 +95,10 @@ SIG_TASK_INFO_UPDTAER = "TaskInfoUpdaterState"
 TASK_INFO_UPDATER_RUN = "run"
 TASK_INFO_UPDATER_PAUSE = "pause"
 
+## Random peer selection algorithm: task urgency thresholds
+TASK_URGENCY_TH_HIGH = 0.5
+TASK_URGENCY_TH_LOW = 0
+
 # Angle alias
 ANGLE30  = pi/6
 ANGLE90  = pi/2
